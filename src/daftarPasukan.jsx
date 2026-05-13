@@ -4,6 +4,8 @@ export default function DaftarPasukan() {
   const [nama, setNama] = useState("");
   const [kodeRahasia, setKodeRahasia] = useState("");
   const [senjata, setSenjata] = useState("");
+  const [berhasil, setBerhasil] = useState(false);
+  const [daftarPasukan, setDaftarPasukan] = useState([]);
 
   function prosesPendaftaran(event) {
     event.preventDefault();
@@ -11,9 +13,18 @@ export default function DaftarPasukan() {
       `Prajurit ${nama} dengan Sandi ${kodeRahasia} siap tempur membawa ${senjata}`,
     );
 
+    const prajuritBaru = {
+      id: Date.now(),
+      namaPrajurit: nama,
+      sandiRahasia: kodeRahasia,
+      jenisSenjata: senjata,
+    };
+
+    setDaftarPasukan([...daftarPasukan, prajuritBaru]);
     setNama("");
     setKodeRahasia("");
     setSenjata("");
+    setBerhasil(true);
   }
 
   return (
@@ -50,6 +61,24 @@ export default function DaftarPasukan() {
           Input Pasukan
         </button>
       </form>
+      {berhasil && <div>Pendaftaran sukses!</div>}
+      <div style={{ marginTop: "30px" }}>
+        <h2>Daftar Pasukan Terkini:</h2>
+
+        {daftarPasukan.map((prajurit) => {
+          return (
+            // Atribut 'key' adalah syarat mutlak dari mesin React
+            <div key={prajurit.id}>
+              <p>
+                <strong>Nama:</strong> {prajurit.namaPrajurit}
+              </p>
+              <p>
+                <strong>Senjata:</strong> {prajurit.jenisSenjata}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

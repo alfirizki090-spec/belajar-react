@@ -7,6 +7,9 @@ import MesinKetikan from "./formInput";
 import FormSignUp from "./formSignUp";
 import FormLogin from "./formLogin";
 import DaftarPasukan from "./daftarPasukan";
+import SaklarLampu from "./SaklarLampu";
+import Rekrutmen from "./Rekrutmen";
+import DaftarUser from "./DaftarUser";
 
 function CatatanTahap1() {
   const dataTim = [
@@ -98,6 +101,9 @@ export default function App() {
       <FormSignUp />
       <FormLogin />
       <DaftarPasukan />
+      <SaklarLampu />
+      <Rekrutmen />
+      <DaftarUser />
     </div>
   );
 }
