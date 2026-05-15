@@ -10,6 +10,7 @@ import DaftarPasukan from "./daftarPasukan";
 import SaklarLampu from "./SaklarLampu";
 import Rekrutmen from "./Rekrutmen";
 import DaftarUser from "./DaftarUser";
+import BukuTamu from "./BukuTamu";
 
 function CatatanTahap1() {
   const dataTim = [
@@ -104,6 +105,7 @@ export default function App() {
       <SaklarLampu />
       <Rekrutmen />
       <DaftarUser />
+      <BukuTamu />
     </div>
   );
 }

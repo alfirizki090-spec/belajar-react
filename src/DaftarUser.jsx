@@ -8,7 +8,7 @@ export default function DaftarUser() {
     const ambilDataUser = async () => {
       try {
         const response = await fetch(
-          "https://jsonplaceholder.typicode.com/users",
+          "https://jsonplaceholder.typicode.com/users?_limit=5",
         );
         const data = await response.json();
 
