@@ -1,4 +1,8 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import DaftarPengguna from "./DaftarPengguna";
+import DetailPengguna, { detailPenggunaLoader } from "./DetailPengguna";
 import Profil from "./Profil";
 import MenuKopi from "./MenuKopi";
 import TombolAksi from "./TombolAksi";
@@ -11,6 +15,12 @@ import SaklarLampu from "./SaklarLampu";
 import Rekrutmen from "./Rekrutmen";
 import DaftarUser from "./DaftarUser";
 import BukuTamu from "./BukuTamu";
+import Navigasi from "./Navigasi";
+import HalamanHome from "./HalamanHome";
+import HalamanProfil from "./HalamanProfil";
+import Login from "./Login";
+import Dashboard from "./Dashboard";
+import HalamanEror from "./HalamanError";
 
 function CatatanTahap1() {
   const dataTim = [
@@ -91,7 +101,49 @@ function CatatanTahap2() {
   );
 }
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <DaftarPengguna />,
+  },
+  {
+    path: "/pengguna/:id",
+    element: <DetailPengguna />,
+    loader: detailPenggunaLoader,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    caseSensitive: true,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    errorElement: <HalamanEror />,
+    children: [
+      {
+        path: "",
+        element: <h3>ini halaman feed foto</h3>,
+      },
+      {
+        path: "search",
+        element: <h3>ini halaman search</h3>,
+      },
+      {
+        path: "profile",
+        element: <h3>ini halaman profil</h3>,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <HalamanEror />,
+  },
+]);
+
 export default function App() {
+  {
+    /*
   return (
     <div>
       <CatatanTahap1 />
@@ -106,6 +158,14 @@ export default function App() {
       <Rekrutmen />
       <DaftarUser />
       <BukuTamu />
+       <Navigasi /> 
+      <Routes>
+        <Route path="/" element={<HalamanHome />} />
+        <Route path="/profil" element={<HalamanProfil />} />
+      </Routes> 
     </div>
   );
+  */
+  }
+  return <RouterProvider router={router} />;
 }
