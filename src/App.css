@@ -1,0 +1,91 @@
+.app-container {
+  min-height: 100vh;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.tema-terang {
+  background-color: white;
+  color: black;
+}
+
+.tema-gelap {
+  background-color: #222222;
+  color: white;
+}
+/* CSS dasar untuk layar dan elemen */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Mode Terang */
+.layar-terang {
+  background-color: #ffffff;
+  color: #333333;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Mode Gelap */
+.layar-gelap {
+  background-color: #222222;
+  color: #ffffff;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Desain Navbar */
+.navigasi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 2px solid #555555;
+}
+
+/* Desain Tombol */
+.tombol-tema {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.tombol-tema:hover {
+  background-color: #0056b3;
+}
+
+/* Desain Konten Utama */
+.konten-utama {
+  padding: 40px;
+  text-align: center;
+}
+
+.konten-utama h1 {
+  margin-bottom: 10px;
+}
+
+.tombol {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.tombol:hover {
+  background-color: #0056b3;
+}

@@ -16,6 +16,8 @@ export default function DaftarPengguna() {
           <Link to="/pengguna/3">Lihat Profil Sophia</Link>
         </li>
       </ul>
+      <hr />
+      <Link to="/login">Login ig mini</Link>
     </div>
   );
 }

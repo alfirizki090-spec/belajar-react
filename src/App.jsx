@@ -1,4 +1,13 @@
 import "./App.css";
+import { ThemeContext } from "./ThemeContext";
+import Navbar from "./Navbar";
+import { useContext } from "react";
+import { AuthContext } from "./AuthContext";
+import Header from "./Header";
+import KontrolKeranjang from "./KontrolKeranjang";
+
+{
+  /*
 import { Routes, Route } from "react-router-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DaftarPengguna from "./DaftarPengguna";
@@ -21,7 +30,10 @@ import HalamanProfil from "./HalamanProfil";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import HalamanEror from "./HalamanError";
-
+*/
+}
+{
+  /*
 function CatatanTahap1() {
   const dataTim = [
     { id: 1, nama: "Andi", pekerjaan: "Frontend Developer" },
@@ -140,12 +152,23 @@ const router = createBrowserRouter([
     element: <HalamanEror />,
   },
 ]);
+*/
+}
 
 export default function App() {
-  {
-    /*
+  const { tema } = useContext(ThemeContext);
+  const { user, setUser } = useContext(AuthContext);
   return (
-    <div>
+    <div className={tema === "gelap" ? "layar-gelap" : "layar-terang"}>
+      <Navbar />
+      <main>
+        <p>Selamat Datang {user}</p>
+      </main>
+      <hr />
+      <Header />
+      <KontrolKeranjang />
+
+      {/*
       <CatatanTahap1 />
       <UjianTahap1 />
       <CatatanTahap2 />
@@ -163,9 +186,12 @@ export default function App() {
         <Route path="/" element={<HalamanHome />} />
         <Route path="/profil" element={<HalamanProfil />} />
       </Routes> 
+      */}
     </div>
   );
+  {
+    /*
+  return <RouterProvider router={router} />;
   */
   }
-  return <RouterProvider router={router} />;
 }
