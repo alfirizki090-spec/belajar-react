@@ -1,3 +1,5 @@
+{
+  /*
 import "./App.css";
 import { ThemeContext } from "./ThemeContext";
 import Navbar from "./Navbar";
@@ -6,8 +8,7 @@ import { AuthContext } from "./AuthContext";
 import Header from "./Header";
 import KontrolKeranjang from "./KontrolKeranjang";
 
-{
-  /*
+
 import { Routes, Route } from "react-router-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DaftarPengguna from "./DaftarPengguna";
@@ -156,9 +157,15 @@ const router = createBrowserRouter([
 }
 
 export default function App() {
+  {
+    /* 
   const { tema } = useContext(ThemeContext);
   const { user, setUser } = useContext(AuthContext);
-  return (
+  */
+  }
+  return;
+  {
+    /*
     <div className={tema === "gelap" ? "layar-gelap" : "layar-terang"}>
       <Navbar />
       <main>
@@ -168,7 +175,7 @@ export default function App() {
       <Header />
       <KontrolKeranjang />
 
-      {/*
+      
       <CatatanTahap1 />
       <UjianTahap1 />
       <CatatanTahap2 />
@@ -186,9 +193,10 @@ export default function App() {
         <Route path="/" element={<HalamanHome />} />
         <Route path="/profil" element={<HalamanProfil />} />
       </Routes> 
-      */}
+      
     </div>
-  );
+    */
+  }
   {
     /*
   return <RouterProvider router={router} />;
